@@ -7,15 +7,8 @@
 
 Console.WriteLine("Введите число: ");
 int userNumber = Convert.ToInt32(Console.ReadLine());
-Console.Write("1");
-for(int i = 2; i<=userNumber; i++) 
+for(int i = 1; i<=userNumber; i++) 
 {
-    int square = i*i;
-    Console.Write($",{square}");
+    int cube = i*i*i;
+    Console.Write($"{cube} ");
 }
-
-
-/* if i=userNumber;
-    {
-        Console.Write($"{square}");
-    } */
