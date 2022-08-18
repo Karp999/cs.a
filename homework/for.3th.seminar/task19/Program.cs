@@ -21,3 +21,4 @@ else
 {
     Console.WriteLine("Это не палиндром!");
 }
+

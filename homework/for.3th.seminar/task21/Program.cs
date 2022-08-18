@@ -17,7 +17,8 @@ int userZ1 = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите Z2: ");
 int userZ2 = Convert.ToInt32(Console.ReadLine());
 
-double distance = Math.Sqrt((userX2-userX1)*(userX2-userX1)+(userY2-userY1)*(userY2-userY1)+(userZ2-userZ1)*(userZ2-userZ1));
+double distance = Math.Sqrt((userX2-userX1)*(userX2-userX1)+(userY2-userY1)*
+(userY2-userY1)+(userZ2-userZ1)*(userZ2-userZ1));
 distance = Math.Round(distance, 2);
 Console.WriteLine($"Расстояние равно: {distance}");
 
