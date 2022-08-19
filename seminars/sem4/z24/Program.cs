@@ -8,8 +8,11 @@
 // задаём счетчик, который будет увеличиваться, каждый проход цикла 
 // добавляем переменную, которая будет содержать в себе сумму  
 Console.Clear(); Console.WriteLine("Введите число: "); 
-int num = int.Parse(Console.ReadLine());  
-int GetSumNums(int number) 
+int num = Convert.ToInt32(Console.ReadLine());  
+/*Можно написать int num = int.Parse(Console.ReadLine()); !!!НО у меня показывает 
+предостережение-ошибку:Возможно, аргумент-ссылка, допускающий значение NULL,
+для параметра "s" в "int int.Parse(string s)", так что пишу через CONVERT */
+int GetSumN(int number) 
 {   int sum = 0;    
     int i = 1;    
     while(i<=number)     
@@ -20,4 +23,4 @@ int GetSumNums(int number)
     }    
     return sum; 
 } 
-Console.WriteLine($"Сумма чисел от 1 до А = {GetSumNums(num)}");
+Console.WriteLine($"Сумма чисел от 1 до А = {GetSumN(num)}");
