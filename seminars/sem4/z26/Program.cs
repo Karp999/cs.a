@@ -5,11 +5,14 @@
 89126 -> 5  
 */
 Console.WriteLine("Введите число:");
-int num = int.Parse(Console.ReadLine());
+int num = Convert.ToInt32(Console.ReadLine());  
+/*Можно написать int num = int.Parse(Console.ReadLine()); !!!НО у меня показывает 
+предостережение-ошибку:Возможно, аргумент-ссылка, допускающий значение NULL,
+для параметра "s" в "int int.Parse(string s)", так что пишу через CONVERT */
 int Counter(int num)
 {
     int count = 0;
-    while(count < num);
+    while(0 < num)
     {
         num = num/10;
         count++;
