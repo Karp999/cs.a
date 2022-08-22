@@ -2,17 +2,8 @@
 случайном порядке. Пример:
 [1,0,1,1,0,1,0,0]
 */
-int[] arr = new int[8];
 
-for(int i=0; i < arr.Length; i++) {
-    arr[i] = new Random().Next(0,2);
-}
-
-for(int i=0; i < arr.Length; i++) {
-    Console.Write($"{arr[i]} ");
-}
-
-/*или варианты:
+int [] array = new int[8];
 
 void FillArray(int[] collection)
 {
@@ -24,7 +15,6 @@ void FillArray(int[] collection)
         index++;
     }
 }
-
 void PrintArray(int[] col)
 {
     int count = col.Length;
@@ -37,7 +27,5 @@ void PrintArray(int[] col)
 
 }
 
-int [] array = new int[8];
-
 FillArray(array);
-PrintArray(array); */
+PrintArray(array);
