@@ -1,5 +1,6 @@
 ﻿// ЛЕКЦИЯ №4. Двумерные массивы и рекурсия 
 
+/* Пример массива из строк:
 string[,] table = new string[2, 5];
 table[1, 2] = "слово";
 //обращение к нужному элементу массива: table[1,2]
@@ -10,4 +11,21 @@ for (int rows=0; rows<2; rows++)
     {
         Console.WriteLine($"-{table[rows,columns]}-");
     }
+}
+*/
+
+//Пример массива из чисел
+
+int[,] matrix = new int[3,4];
+//Здесь Сергей сказал, что rows в числовом виде часто пишут i, columns - j
+for (int i=0; i<matrix.GetLength(0); i++)
+//в циклах или методах вместо 3 и 4,где  i<3 и j<4, мы можем указать matrix.GetLength(0)
+{
+    for (int j=0; j<matrix.GetLength(1); j++)
+    {
+        Console.Write($"{matrix[i,j]}");
+        /*здесь была ошибка:вывод в 1 столбец,так как Console.WriteLine($"{matrix[i,j]}")-мы каждый раз 
+        переходили на новую строку.теперь мы остаёмся на строке, а потом в основной цикл добавим пустую строку */
+    }
+    Console.WriteLine();
 }
