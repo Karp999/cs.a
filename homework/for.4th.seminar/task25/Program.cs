@@ -4,12 +4,15 @@
 3, 5 -> 243 (3⁵)
 2, 4 -> 16
 */
+Console.WriteLine ("Введите число A: ");
+int userNumber = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine ("Введите число B: ");
+int userPower = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine ("Введите число 1: ");
-double userNum1 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine ("Введите число 2: ");
-double userNum2 = Convert.ToInt32(Console.ReadLine());
-//нужен цикл!!!+думай насчёт double
-double result = Math.Pow(userNum1, userNum2);
+int PowerOfNumber = userNumber;
 
-Console.WriteLine ($"{userNum1} в степени {userNum2} равняется {result} .");
+for (int i = 1; i<userPower; i++)
+{
+    PowerOfNumber = PowerOfNumber * userNumber;
+}
+Console.WriteLine ($"{userNumber} в степени {userPower} равняется {PowerOfNumber} ."); 
