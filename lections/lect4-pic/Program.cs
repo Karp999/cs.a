@@ -45,3 +45,18 @@ void PrintImage(int[,] image)
     }
 }
 PrintImage(pic);
+
+void FillImage(int row, int col)
+{
+    if (pic[row, col] == 0)
+    {
+        pic[row, col] = 1; //закрасит единицей
+        FillImage(row - 1, col); //пойдёт вверх
+        FillImage(row, col - 1); // пойдёт влево
+        FillImage(row + 1, col); //пойдёт вниз
+        FillImage(row, col + 1); // пойдёт вправо
+    }
+}
+PrintImage(pic);
+FillImage(13, 13);
+PrintImage(pic);
