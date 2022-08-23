@@ -20,3 +20,20 @@ int GetMultiply(int number)
     return mul; 
 } 
 Console.WriteLine($"Произведение чисел от 1 до А = {GetMultiply(num)}");
+
+//либо можно через факториал:
+
+Console.Clear();
+Console.WriteLine("Введите число: ");
+int numb = Convert.ToInt32(Console.ReadLine());
+
+int Factorial(int numberr)
+{
+    int fact = 1;
+    for (int i=1; i<=numb; i++)
+    {
+        fact *=i;
+    }
+    return fact;
+}
+Console.WriteLine($"Факториал {Factorial(numb)}");

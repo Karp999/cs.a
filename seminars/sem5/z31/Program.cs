@@ -5,7 +5,7 @@
 положительных чисел равна 29, сумма отрицательных равна
 -20.*/
 
-int [] GetArray(int size, int minValue, int maxValue)
+int [] GetArray(int size, int minValue, int maxValue) //этот метод работает для многих массивов
 {
     int [] res = new int [size];
     for(int i = 0; i < size; i++)
@@ -16,9 +16,12 @@ int [] GetArray(int size, int minValue, int maxValue)
     return res;
 }
 
-int [] array = GetArray(12, -9, 9);
+int [] array = GetArray(12, -9, 9); /* пример вызова метода выше для разных массивов.Здесь заполнение 
+аргументов из условия задачи: 12,-9,9*/
+// Console.Write();
+// int [] array = GetArray(7, 3, 5); - ещё один пример для нашего заполняемого массива
 
-int positiveSum = 0;
+int positiveSum = 0; //вводим две переменные для сумм + и - чисел
 int negativeSum = 0;
 
 foreach(int i in array)
