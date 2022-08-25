@@ -13,9 +13,11 @@ int [] GetArray(int size, int minValue, int maxValue)
     }
     return res;
 }
+Console.WriteLine(); /*эта пустая строка и пустые строки в самом низу кода для красоты и читабельности отображения,
+можно и без них */
 
 int [] ArrayThreeDigitNumbers = GetArray(10, 99, 1000);
-int evenNums = 0;
+int evenNums = 0;//для подсчёта чётных чисел
 
 for(int i = 0; i < ArrayThreeDigitNumbers.Length; i++)
 {
@@ -24,4 +26,6 @@ for(int i = 0; i < ArrayThreeDigitNumbers.Length; i++)
         evenNums = evenNums+1;
     }
 }
-Console.Write($" - в указанном массиве {evenNums} чётных чисел. ");
+Console.Write($" - в указанном массиве {evenNums} чётных чисел. "); 
+Console.WriteLine();
+Console.WriteLine();
