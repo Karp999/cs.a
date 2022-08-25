@@ -32,3 +32,36 @@ for(int i = 0; i <= (array.Length - 1) / 2; i++)
     Console.WriteLine($"{pow} ");
     
 }
+
+
+/*
+int [] GetArray(int size, int minValue, int maxValue)
+{
+int [] res = new int [size];
+for(int i = 0; i < size; i++)
+{
+res[i] = new Random().Next(minValue, maxValue + 1);
+Console.Write($"{res[i]} ");
+}
+return res;
+}
+
+int [] array = GetArray(5, 0, 9);
+Console.WriteLine();
+int pow = 0;
+
+for(int i = 0; i <= array.Length / 2; i++)
+{
+if(i != array.Length - 1 - i)
+{
+pow = array[i] * array[array.Length - 1 - i];
+}
+else
+{
+pow = array[i];
+}
+Console.WriteLine($"{pow} ");
+
+}
+
+*/
