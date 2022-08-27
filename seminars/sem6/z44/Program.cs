@@ -33,3 +33,21 @@ int[] Array = Fib(num);
 PrintArray(Array);
 
 
+/*
+int userNum = new int();
+Console.WriteLine("Введите первое число: ");
+userNum = Convert.ToInt32(Console.ReadLine());
+
+int Fibbonachi(int Num) {
+
+if (Num == 0) return 0;
+
+if (Num == 1) return 1;
+
+return Fibbonachi(Num-1) + Fibbonachi(Num-2);
+}
+
+Console.WriteLine(Fibbonachi(userNum));
+]
+
+*/
