@@ -43,3 +43,19 @@ for(int j = 0; j < reversArray.Length; j++)
 {
     Console.Write(reversArray[j]); //Выводим на экран
 }
+
+
+
+/* не переворачивает!!!-на семинаре
+Console.WriteLine("Введите число: ");
+int userNumber = Convert.ToInt32(Console.ReadLine());
+int number = userNumber;
+int remains = 0;
+
+while (number > 0)
+{
+    remains = number % 2;
+    Console.Write(remains);
+    number = number / 2;
+}
+*/
