@@ -3,7 +3,8 @@
 */
 
 
-/*int[] GetArray(int size, int minValue, int maxValue)
+/*
+int[] GetArray(int size, int minValue, int maxValue)
 {
     int[] res = new int[size];
     for(int i=0; i<size; i++)
@@ -19,7 +20,8 @@ for(int i = 0; i < array1.Length; i++)
 {
     array1[i] = array[i];
 }
-Console.WriteLine(String.Join(" ",array1));*/
+Console.WriteLine(String.Join(" ",array1));
+*/
 
 int[] arr = new int[8]; // создали массив из восьми элементов
 
