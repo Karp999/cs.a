@@ -31,3 +31,20 @@ int[] ReversArray(int[] inArray)
     }
     return result;
 }
+
+
+/*просьба ввести несколько чисел:
+
+Console.WriteLine("Укажите, сколько чисел вы будете вводить:");
+int userArraySize = Convert.ToInt32(Console.ReadLine());
+int[] userArray = new int[userArraySize];
+
+for(int i=0; i<userArraySize; i++)
+{
+    {
+        Console.Write($"Введи {i + 1} число: ");
+        userArray[i] = Convert.ToInt32(Console.ReadLine());
+    }
+}
+
+*/
