@@ -6,44 +6,51 @@
 Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 */
 
-int[,] matrix = new int[3,4];
-/* int minValue = -10;
-int maxValue = 10; */
-for (int i=0; i<matrix.GetLength(0); i++)
+Console.WriteLine("Введите количество строк: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Введите количество столбцов: ");
+int columns = Convert.ToInt32(Console.ReadLine());
+
+int [,] array = GetArray(rows, columns, -10, 10);
+PrintArray(array);
+
+int[,] GetArray(int m, int n, int min, int max)
 {
-    for (int j=0; j<matrix.GetLength(1); j++)
+    int[,] result = new int[m,n];
+    for(int i = 0; i < m; i++)
     {
-        /* int result[i,j] = new Random().Next(minValue, maxValue); */
-        Console.Write($"{matrix[i,j]}");
+        for(int j = 0; j < n ; j++)
+        {
+            result[i,j] = new Random().Next(min, max);
+        }
     }
-    Console.WriteLine();
+    return result;
 }
-
-
-/*
 
 void PrintArray(int[,] array)
 {
-    for (int i = 0; i < array.GetLength(0); i++)
+    for(int i = 0; i < array.GetLength(0); i++)
     {
-        for (int j = 0; j < array.GetLength(1); j++)
+        for(int j = 0; j < array.GetLength(1); j++)
         {
-            Console.Write($" | {array[i, j]} | ");
-            //поставила вертикальные линии в выводе, чтоб зрительно чётче разделение было и для красоты
+            Console.Write($"{array[i,j]} ");
         }
         Console.WriteLine();
     }
-    Console.WriteLine();
 }
 
+
+
+/*
 int ColumnAverage(int m, int n, int minValue, int maxValue)
 {
     int[,] AverageArray = new int[m, n];
 
-    int AverageColumnA =
-    int AverageColumnB =
-    int AverageColumnC =
-    int AverageColumnD =
+    int AverageColumnA = ((0,1)+(1,1)+(2,1)+(3,1))/4
+    int AverageColumnB = ((0,2)+(1,2)+(2,2)+(3,2))/4
+    int AverageColumnC = ((0,3)+(1,3)+(2,3)+(3,3))/4
+    int AverageColumnD = ((0,4)+(1,4)+(2,4)+(3,4))/4
 
     Console.Write($"{AverageColumnA}, {AverageColumnA}, {AverageColumnA}, {AverageColumnA}");
 }
