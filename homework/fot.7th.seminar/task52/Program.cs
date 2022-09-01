@@ -6,52 +6,52 @@
 Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 */
 
-Console.WriteLine("Введите количество строк: ");
-int rows = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("Введите количество столбцов: ");
-int columns = Convert.ToInt32(Console.ReadLine());
+double[,] initialArray = new double[3, 4]; //взяла указанный пример в основу: 3 строки, 4 столбца
+Console.WriteLine();
+FillArray(initialArray);
+PrintArray(initialArray);
+ColumnAverage(initialArray);
 
-int [,] array = GetArray(rows, columns, -10, 10);
-PrintArray(array);
 
-int[,] GetArray(int m, int n, int min, int max)
+void FillArray(double[,] initialArray)
 {
-    int[,] result = new int[m,n];
-    for(int i = 0; i < m; i++)
+    for (int i = 0; i < 3; i++)
     {
-        for(int j = 0; j < n ; j++)
+        for (int j = 0; j < 4; j++)
         {
-            result[i,j] = new Random().Next(min, max);
+            initialArray[i, j] = new Random().Next(-10, 10);
         }
     }
-    return result;
 }
 
-void PrintArray(int[,] array)
+void PrintArray(double[,] initialArray)
 {
-    for(int i = 0; i < array.GetLength(0); i++)
+    for (int i = 0; i < initialArray.GetLength(0); i++)
     {
-        for(int j = 0; j < array.GetLength(1); j++)
+        for (int j = 0; j < initialArray.GetLength(1); j++)
         {
-            Console.Write($"{array[i,j]} ");
+            Console.Write($" | {initialArray[i, j]} | "); //вертикальные знаки для чёткости и красоты вывода
         }
         Console.WriteLine();
     }
+    Console.WriteLine();
 }
 
-
-
-/*
-int ColumnAverage(int m, int n, int minValue, int maxValue)
+void ColumnAverage(double[,] initialArray)
 {
-    int[,] AverageArray = new int[m, n];
-
-    int AverageColumnA = ((0,1)+(1,1)+(2,1)+(3,1))/4
-    int AverageColumnB = ((0,2)+(1,2)+(2,2)+(3,2))/4
-    int AverageColumnC = ((0,3)+(1,3)+(2,3)+(3,3))/4
-    int AverageColumnD = ((0,4)+(1,4)+(2,4)+(3,4))/4
-
-    Console.Write($"{AverageColumnA}, {AverageColumnA}, {AverageColumnA}, {AverageColumnA}");
+    Console.Write("Среднее арифметическое каждого столбца: ");
+    for (int j = 0; j < initialArray.GetLength(1); j++) /* войдём в столбец, подсчёт будем производить по строкам 
+    в столбце, поэтому цикл строк будет находиться в цикле столбцов */
+    {
+        double average = 0; //ввела переменную среднего значения,изначально равна нулю
+        for (int i = 0; i < initialArray.GetLength(0); i++)
+        {
+            average = (average + initialArray[i, j]);
+           // average = Math.Round(average, 1);
+        }
+        Console.Write($" {Math.Round(average/3,1)}  ");
+    }
+    Console.WriteLine();
+    Console.WriteLine();
 }
-*/
