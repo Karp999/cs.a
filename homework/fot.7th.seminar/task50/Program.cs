@@ -9,82 +9,67 @@
 17 -> такого числа в массиве нет
 */
 
+Console.WriteLine();
+Console.Write("Задайте количество строк для массива: ");
+int userRows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Задайте количество столбцов для массива: ");
+int userColumns = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine();
 
-
-
-
-
-/*
-
-//Задаем случайное количество строк и столбцов (для интереса)
-int rows = new Random().Next(1,10);
-int columns = new Random().Next(1,10);
-
-//Применяем методы по созданию и печати массива, чтобы его было сразу видно
-int[,] array = GetArray(rows, columns, 0, 20);
+int[,] array = GetRandomArray(userRows, userColumns, -10, 10);
 PrintArray(array);
+FindRowAndColumn(array);
 
-Console.WriteLine("Введите номер строки искомого элемента массива:");
-int rowNumber = Convert.ToInt32(Console.ReadLine());
-
-Console.WriteLine("Введите номер столбца искомого элемента массива:");
-int columnNumber = Convert.ToInt32(Console.ReadLine());
-
-//Применяем метод по нахождению элемента
-int result = GetItem(array, rowNumber, columnNumber);
-//Не забываем, что индексы начинаются с нуля
-//Выводим результат
-if(result >= 0)
-    {
-        Console.WriteLine($"Элемент с индексом ({rowNumber},{columnNumber}) равен {array[rowNumber,columnNumber]}");
-    }
-    else
-    {
-        Console.WriteLine($"Элемента с индексом ({rowNumber},{columnNumber}) не существует в указанном выше массиве");
-    }
-
-//Задаем метод для заполнения массива случайными числами 
-int [,] GetArray(int rows, int columns, int min, int max)
+int[,] GetRandomArray(int m, int n, int min, int max)
 {
-    int [,] result = new int [rows, columns];
-    for(int i = 0; i < rows; i++)
+    int[,] result = new int[m, n];
+    for (int i = 0; i < m; i++)
     {
-        for(int j = 0; j < columns; j++)
+        for (int j = 0; j < n; j++)
         {
-            result [i,j] = new Random().Next(min,max);
+            result[i, j] = new Random().Next(min, max);
         }
     }
     return result;
 }
 
-//Задаем метод для вывода массива на экран
-
-void PrintArray(int [,] array)
+void PrintArray(int[,] array)
 {
-    for(int i = 0; i < array.GetLength(0); i++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        for(int j = 0; j < array.GetLength(1); j++)
+        for (int j = 0; j < array.GetLength(1); j++)
         {
-            Console.Write($"{array[i,j]} ");
+            Console.Write($" | {array[i, j]} | ");
         }
         Console.WriteLine();
     }
 }
 
-//Задаем метод для нахождения элемента по индексу
-//Немножко изменим, так как в задании сказано про возвращаемый результат
-int GetItem (int[,] array, int rowNumber, int columnNumber)
+void FindRowAndColumn(int[,] array)
 {
-    int result = 0;
-    if(rowNumber < array.GetLength(0) && columnNumber < array.GetLength(1))
+    Console.WriteLine();
+    Console.Write("Какую строку вы ищете?: ");
+    int userRowForSearching = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Какой столбец вы ищете?: ");
+    int userColumnForSearching = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine();
+
+    if (userRowForSearching < array.GetLength(0) || userColumnForSearching < array.GetLength(1))
     {
-        result = array[rowNumber,columnNumber];
+        int result = 0;
+        result = array[userRowForSearching, userColumnForSearching];
+        Console.WriteLine($"По вашему запросу индекса в матрице найден элемент: {result}");
     }
-    else
+    else 
     {
-        result = -1;//Будем считать, что если результат отрицательный, то такого элемента не существует
+        Console.WriteLine($"Такого элемента в матрице не существует!"); /*не понимаю каким образом, 
+        но иногда выходит это сообщение, а иногда программное исключение "Unhandled exception. 
+        System.IndexOutOfRangeException: Index was outside the bounds of the array.". 
+        Программа сама определяет, что при поиске пользователь вышел за пределы массива. Хотя, например, 
+        задаю массив 5*5, ищу элемент [6,8] - показывает моё сообщение об отсутствии элемента; 
+        ищу элемент [1,9] - программное исключение. В интернете читала про это, но не совсем понимаю,как это
+        относится к моему решению */
     }
-    return result;
+    Console.WriteLine();
 }
 
-*/
