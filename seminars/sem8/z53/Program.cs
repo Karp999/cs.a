@@ -9,8 +9,8 @@ int [,] array = GetArray(rows, columns, 0, 20);
 PrintArray(array);
 Console.WriteLine();
 
-ChangeArray(array);
-PrintArray(array);
+PrintArray(ChangeArray(array));
+
 
 int [,] GetArray(int rows, int columns, int min, int max)
 {
