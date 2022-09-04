@@ -3,6 +3,8 @@
 информацию о том, сколько раз встречается элемент
 входных данных.*/
 
+/* ОЛЯ
+
 int rows = new Random().Next(1, 10);
 int columns = new Random().Next(1, 10);
 
@@ -90,12 +92,13 @@ void PrintData(int[] array)
     }
     Console.WriteLine($"Число {firstNumber} встречается {count} раз");//используем переменную, в которую положили i-тый элемент
 }
-/*
+*/
+
 Console.WriteLine("Введите количество строк");
 int raws = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Ведите количество столбцов");
-int colums = Convert.ToInt32(Console.ReadLine());
-int[,] array = new int[raws, colums];
+int columns = Convert.ToInt32(Console.ReadLine());
+int[,] array = new int[raws, columns];
 void FillArray(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
@@ -171,4 +174,3 @@ int [] result = GetRowArray(array);
 Console.WriteLine();
 SortArray(result);
 PrintDate(result);
-*/
