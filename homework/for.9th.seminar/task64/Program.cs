@@ -6,21 +6,19 @@ M = 4; N = 8. -> ""8, 7, 6, 5, 4""
 */
 
 Console.WriteLine("Введите число M: ");
-int firstUserNumber = Convert.ToInt32(Console.ReadLine());
-
+int userM = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите число N: ");
-int secondUserNumber = Convert.ToInt32(Console.ReadLine());
+int userN = Convert.ToInt32(Console.ReadLine());
 
-string MaxToMin (int firstUserNumber, int secondUserNumber)
+string MaxToMin(int userM, int userN)
 {
-    if(firstUserNumber < secondUserNumber)
-    { 
-        return $"{secondUserNumber} " + MaxToMin (firstUserNumber, secondUserNumber-1);
+    if (userM < userN)
+    {
+        return $"{userN} " + MaxToMin(userM, userN - 1);
     }
     else
-    { 
-        return $"{firstUserNumber} ";
+    {
+        return $"{userM} ";
     }
 }
-
-Console.WriteLine(MaxToMin(firstUserNumber, secondUserNumber));
+Console.WriteLine(MaxToMin(userM, userN));
