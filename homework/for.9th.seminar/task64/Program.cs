@@ -4,11 +4,12 @@
 M = 1; N = 5. -> ""5, 4, 3, 2, 1""
 M = 4; N = 8. -> ""8, 7, 6, 5, 4""
 */
-
-Console.WriteLine("Введите число M: ");
+Console.WriteLine();
+Console.Write("Введите число M: ");
 int userM = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите число N: ");
+Console.Write("Введите число N: ");
 int userN = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine();
 
 string MaxToMin(int userM, int userN)
 {
@@ -21,4 +22,6 @@ string MaxToMin(int userM, int userN)
         return $"{userM} ";
     }
 }
+Console.WriteLine($"Вывод натуральных чисел в промежутке от {userM} до {userN} от большего к меньшему: ");
 Console.WriteLine(MaxToMin(userM, userN));
+Console.WriteLine();
