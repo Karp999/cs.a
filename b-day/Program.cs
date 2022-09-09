@@ -1,21 +1,18 @@
 ﻿Console.Clear();
 
 DateTime myDateOfBirth = new DateTime(1996, 9, 9); 
-Console.WriteLine($"Date of birthday: {myDateOfBirth.ToShortDateString()}");
+Console.WriteLine($"Date of my birthday: {myDateOfBirth.ToShortDateString()}");
 DateTime todayBday = new DateTime(2022, 9, 9); 
 Console.WriteLine($"Today: {todayBday.ToShortDateString()}");
-Console.WriteLine($"Hello,{(todayBday.Subtract(myDateOfBirth))/360} Anya's years!♥ ♥ ♥ ");
+TimeSpan Age = (todayBday.Subtract(myDateOfBirth))/360;
+string text = ($"♥ Hello, my {Age} ");
+text = text.Substring(0, text.Length-10); 
+Console.WriteLine(text);
+Console.WriteLine();
+Console.WriteLine();
+Console.WriteLine();
 
-/*
-int CalculateAge(DateTime birthDate)
-{todayBday.Subtract(myDateOfBirth)
-    DateTime birthDate = new DateTime(1996, 9, 9);
-    DateTime today = DateTime.Today;
-    int age = today.Year - birthDate.Year;
-    if (birthDate.AddYears(age) > today)
-    {
-        age--;
-    }
-    return age;
-}
-*/
+
+
+
+
